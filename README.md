@@ -4,7 +4,7 @@
 
 ## The Story
 
-My Lola was mad at me. So her bunny made this.
+For people who love photobooths but cannot access one.
 
 Bunny & Lola is a virtual photobooth that captures more than just photos—it captures moments, stories, and the unique energy of the cities we love. Born in Melbourne, built with nostalgia, and designed for connection.
 
