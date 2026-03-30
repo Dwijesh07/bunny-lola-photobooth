@@ -1,0 +1,18 @@
+# Create .gitignore file
+@"
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+build/
+dist/
+.env
+.env.*
+*.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+.netlify/
+backend/
+"@ | Out-File -FilePath .gitignore -Encoding utf8

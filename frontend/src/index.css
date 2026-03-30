@@ -1,0 +1,617 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    background: #FEFAF5;
+    color: #1A1A1A;
+    font-family: 'Cormorant Garamond', 'EB Garamond', 'Playfair Display', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings - Mobile First */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', 'EB Garamond', 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1A1A1A;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Body text */
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    color: #2A2A2A;
+  }
+
+  /* Desktop Typography */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* Secondary text */
+  .text-secondary {
+    color: #8B7E6B;
+  }
+
+  /* Links */
+  a {
+    color: #1A1A1A;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
+
+  /* Horizontal rule divider */
+  hr {
+    border: none;
+    border-top: 1px solid #E8DFD3;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    hr {
+      margin: 2rem 0;
+    }
+  }
+
+  /* Buttons */
+  button, .btn {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    color: #1A1A1A;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 0.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    button, .btn {
+      font-size: 0.75rem;
+    }
+  }
+
+  button:hover, .btn:hover {
+    opacity: 0.6;
+  }
+
+  /* Form inputs */
+  input, textarea, select {
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-size: 0.875rem;
+    border: none;
+    border-bottom: 1px solid #E8DFD3;
+    padding: 0.5rem 0;
+    background: transparent;
+    color: #1A1A1A;
+    transition: border-color 0.2s ease;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    input, textarea, select {
+      font-size: 1rem;
+    }
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-bottom-color: #1A1A1A;
+  }
+
+  /* Image styles */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* City Selector Styles - Mobile First */
+.city-selector-container {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .city-selector-container {
+    margin: 2rem 0;
+  }
+}
+
+.city-category {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .city-category {
+    margin-bottom: 2rem;
+  }
+}
+
+.city-category h3 {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8B7E6B;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #E8DFD3;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .city-category h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .city-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .city-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.city-card {
+  border: 1px solid #E8DFD3;
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: white;
+  text-align: left;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .city-card {
+    padding: 1rem;
+  }
+}
+
+.city-card:hover {
+  border-color: #1A1A1A;
+  background: #FAF6F0;
+}
+
+.city-card.selected {
+  border-color: #1A1A1A;
+  background: #FAF6F0;
+  border-width: 2px;
+}
+
+.city-card h4 {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #1A1A1A;
+}
+
+@media (min-width: 768px) {
+  .city-card h4 {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.city-card p {
+  font-size: 0.6rem;
+  color: #8B7E6B;
+  margin-bottom: 0;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .city-card p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mode Selection Styles - Mobile First */
+.mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 480px) {
+  .mode-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .mode-buttons {
+    margin: 2rem 0;
+  }
+}
+
+.mode-button {
+  border: 1px solid #E8DFD3;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  flex: 1;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .mode-button {
+    padding: 1.5rem;
+  }
+}
+
+.mode-button:hover {
+  border-color: #1A1A1A;
+  background: #FAF6F0;
+}
+
+.mode-button.active {
+  border-color: #1A1A1A;
+  background: #FAF6F0;
+  border-width: 2px;
+}
+
+.mode-button .emoji {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .mode-button .emoji {
+    font-size: 2rem;
+  }
+}
+
+.mode-button h3 {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+@media (min-width: 768px) {
+  .mode-button h3 {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.mode-button p {
+  font-size: 0.6rem;
+  color: #8B7E6B;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .mode-button p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Editorial Card - Mobile First */
+.editorial-card {
+  background: white;
+  border: 1px solid #E8DFD3;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .editorial-card {
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+}
+
+/* Camera Styles - Mobile First */
+.camera-frame {
+  border: 1px solid #E8DFD3;
+  background: #FAF6F0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+/* Photo Grid - Mobile First */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .photo-grid {
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+.photo-frame {
+  aspect-ratio: 1;
+  background: #FAF6F0;
+  border: 1px solid #E8DFD3;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .photo-label {
+    font-size: 0.6rem;
+    padding: 0.25rem;
+  }
+}
+
+/* Vintage Filter */
+.vintage-filter {
+  filter: grayscale(100%) contrast(120%) brightness(90%) sepia(25%);
+}
+
+/* Container - Mobile First */
+.max-w-4xl, .max-w-7xl {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .max-w-4xl, .max-w-7xl {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .max-w-4xl {
+    max-width: 896px;
+  }
+  .max-w-7xl {
+    max-width: 1280px;
+  }
+}
+
+/* Grid Layouts - Mobile First */
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Responsive Utilities */
+@media (max-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .full-width-mobile {
+    width: 100%;
+  }
+  
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Override any conflicting styles */
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #FEFAF5 0%, #FCF5E8 100%) !important;
+}
+
+.text-bunny-pink {
+  color: #1A1A1A !important;
+}
+
+.bg-bunny-pink {
+  background: #1A1A1A !important;
+}
+
+.bg-retro-pink {
+  background: #FEFAF5 !important;
+}
+
+.bg-lola-pink {
+  background: #FAF6F0 !important;
+}
+
+.border-lola-pink {
+  border-color: #E8DFD3 !important;
+}
+
+/* Ensure all text is visible */
+* {
+  color: inherit;
+}
+
+/* Button styles with arrows */
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-arrow::after {
+  content: "→";
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  button, .btn, .city-card, .mode-button {
+    min-height: 44px;
+  }
+  
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+}
+
+/* Prevent overflow */
+img, video, iframe, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+* {
+  -webkit-overflow-scrolling: touch;
+}
